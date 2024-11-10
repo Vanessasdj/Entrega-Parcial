@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+let nome = prompt("Digite seu nome:");
+let idade = prompt("Digite sua idade:");
+let nota1 = parseFloat(prompt("Digite a primeira nota:"));
+let nota2 = parseFloat(prompt("Digite a segunda nota:"));
+let nota3 = parseFloat(prompt("Digite a terceira nota:"));
+
+// Armazenando as notas em um array
+let notas = [nota1, nota2, nota3];
+
+// A soma
+function calcularSoma(array) {
+    let soma = 0;
+    for (let i = 0; i < array.length; i++) {
+        soma += array[i];
+    }
+    return soma;
+}
+
+// A média
+function calcularMedia(array) {
+    let soma = calcularSoma(array);
+    return soma / array.length;
+}
+
+// A maior nota
+function maiorNota(array) {
+    let maior = array[0];
+    for (let i = 1; i < array.length; i++) {
+        if (array[i] > maior) {
+            maior = array[i];
+        }
+    }
+    return maior;
+}
+
+// Processamento dos dados
+let somaNotas = calcularSoma(notas);
+let mediaNotas = calcularMedia(notas);
+let notaMaxima = maiorNota(notas);
+
+
+console.log("Nome do aluno: " + nome);
+console.log("Idade do aluno: " + idade);
+console.log("Notas: " + notas);
+console.log("Soma das notas: " + somaNotas);
+console.log("Média das notas: " + mediaNotas.toFixed(2));
+console.log("Maior nota: " + notaMaxima);
+
+alert("Resumo do aluno:\n" +
+      "Nome: " + nome + "\n" +
+      "Idade: " + idade + "\n" +
+      "Notas: " + notas + "\n" +
+      "Soma das notas: " + somaNotas + "\n" +
+      "Média das notas: " + mediaNotas.toFixed(2) + "\n" +
+      "Maior nota: " + notaMaxima);
+
+
+    </script>
+</body>
+</html>
