@@ -26,27 +26,14 @@ function calcularSoma(array) {
     return soma;
 }
 
-// A média
-function calcularMedia(array) {
-    let soma = calcularSoma(array);
-    return soma / array.length;
-}
-
-// A maior nota
-function maiorNota(array) {
-    let maior = array[0];
-    for (let i = 1; i < array.length; i++) {
-        if (array[i] > maior) {
-            maior = array[i];
-        }
-    }
-    return maior;
-}
-
 // Processamento dos dados
 let somaNotas = calcularSoma(notas);
-let mediaNotas = calcularMedia(notas);
-let notaMaxima = maiorNota(notas);
+
+// A média das notas
+let mediaNotas = somaNotas / notas.length;
+
+// A maior nota 
+let notaMaxima = Math.max(notas[0],notas[1],notas[2]);
 
 
 console.log("Nome do aluno: " + nome);
